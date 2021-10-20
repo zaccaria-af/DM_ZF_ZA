@@ -1,0 +1,144 @@
+\section{Grundbegriffe und elementare Logik}
+
+	\subsection{Aussagen, Prädikate und Quantoren}
+		\begin{definition}{Definition 1}
+		Unter einer \textit{Aussage} wollen wir ein 
+		``sprachliches Gebilde'' verstehen, welchem zumindest im 
+		Prinzip ein Wahrheitswert ``wahr'' oder ``falsch'' 
+		zugeordnet werden kann.
+		\end{definition}
+
+		\begin{definition}{Definition 2}
+		Es sei $\mathit{n}$ reine natürliche Zahl. 
+		Ein sprachliches Gebilde, in dem $\mathit{n}$ viele 
+		Variablen (frei) vorkommen und das bei Belegung 
+		aller (freien) Variablen in eine Aussage übergeht, 
+		nennen wir ein \textit{n-stelliges Prädikat}.
+		\end{definition}
+
+		\begin{definition}{Definition 3}
+			\begin{itemize}
+			\item $\neg A$ ist genau dann wahr, wenn \textit{A} falsch ist.
+			\item $A  \land B$ ist genau dann wahr, wenn sowohl 
+			\textit{A} als auch \textit{B} wahr sind.
+			\item $A \lor B$ ist genau dann wahr, wenn \textit{A} 
+			wahr ist oder \textit{B} wahr ist, oder beide wahr sind.
+			\item $A \implies B$ ist genau dann wahr, wenn 
+			$\neg A \lor B$ wahr ist.
+			\item $A \iff B$ ist genau dann wahr, wenn 
+			$A \implies B$ und $B \implies A$ wahr sind.
+			\end{itemize}
+		\end{definition} 
+
+	\subsubsection{Junktorenregeln}
+	\begin{align*}
+		\neg\neg A &\iff A \qquad &\text{Doppelte Negation} \\
+		A \land B &\iff B \land A 
+		\qquad &\text{Kommutativität} \\
+		A \lor B &\iff B \lor A \\
+		(A \land B) \land C &\iff A \land (B \land C) 
+		\qquad &\text{Assoziativität} \\
+		(A \lor B) \lor C &\iff A \lor (B \lor C) \\
+		A \land (B \lor C) &\iff (A \land B) \lor (A \land C) 
+		\qquad &\text{Distributivität} \\
+		A \lor (B \land C) &\iff (A \lor B) \land (A \lor C) \\
+		\neg (A \land B) &\iff \neg A \lor \neg B 
+		\qquad &\text{De Morgan} \\
+		\neg (A \lor B) &\iff \neg A \land \neg B
+	\end{align*}
+	
+	\subsubsection{Beispiel Kontraposition}
+	Die aufgestellten Rechenregeln können verwendet werden 
+	um wiederum neue Tatsachen abzuleiten. 
+	Unter anderem folgt daraus das Prinzip der \textit{Kontraposition}. 
+	Dieses Prinzip besagt, dass $A \implies B$ 
+	äquivalent ist zu $\neg B \implies \neg A$.
+	\begin{align*}
+		&A \implies B \\
+		&\iff \neg A \land B \qquad &\text{(Definition von A 
+		$\implies$ B)} \\
+		&\iff B \land \neg A \qquad &\text{(Kommutativität)} \\
+		&\iff \neg\neg B \land \neg A \qquad 
+		&\text{(Doppelte Negation)} \\
+		&\iff \neg B \implies \neg A \qquad &\text{(Definition von 
+		$\neg B \implies \neg A $)}
+	\end{align*}
+
+	\subsubsection{Quantoren}
+	Quantoren sind Symbole anhand derer wir aus Prädikaten 
+	neue Prädikate oder Aussagen gewinnen können.
+	\begin{definition}{Definition 4}
+	\begin{itemize}
+		\item $\forall xA (x)$: A trifft auf jedes Objekt zu.
+		\item $\forall x \in M A(x)$: A trifft auf jedes Objekt aus M zu.
+		\item $\exists x A(x)$: Es gibt mindestens ein Objekt O welches
+		auf A zutrifft
+		\item $\exists x \in M A(x)$: Es gibt mindestens ein Objekt
+		aus M, welches auf A zutrifft.
+	\end{itemize}
+	Die Symbole $\forall$ und $\exists$ heissen \textit{Allquantor} und
+	\textit{Existenzquantor}
+	Ein \textit{n}-stelliges Prädikat wird durch Quantifizierung stets zu
+	einem \textit{n-1}-stelligem Prädikat.
+	\end{definition}
+	\subsubsection{Quantorenregeln}
+	\begin{align*}
+		\forall x A(x) &\iff \neg\exists x \neg A(x) \\
+		\forall x \in K A(x) &\iff \neg\exists x \in K \neg A(x) \\
+		\forall x \in K A(x) &\iff \forall x(x\in K \implies A(x)) \\
+		\exists x \in K A(x) &\iff \exists x (x \in K \land A(x) \\
+	\end{align*}
+
+	\subsection{Grundlegende Beweistechniken}
+	
+	\subsubsection{Direkter Beweis einer Implikation}
+	Wir geben, basierend auf der Annahme dass die Implikation $A$ wahr ist, 
+	zwingende Argumente für die Richtigkeit von $B$.\\
+	\textbf{Beispiel:} ``Wenn $x$ und $y$ gerade sind, 
+	dann ist auch $x \cdot y$ gerade.''
+	$\rightarrow x \cdot y$ ist ein vielfaches von 2 und somit gerade.
+	\begin{align*}
+		&x = 2 \cdot n_x \qquad y = 2 \cdot n_y \\
+		&x \cdot y = (2 \cdot n_x) \cdot (2 \cdot n_y) = 
+		2 \cdot (n_x \cdot 2 \cdot n_y)
+	\end{align*}
+	
+	\subsubsection{Beweis durch Widerspruch}
+	Wir nehmen an, die Aussage $A$ wäre falsch und benutzen diese Annahme, 
+	um einen Widerspruch herzuleiten.\\ 
+	\textbf{Beispiel:} $A\coloneqq$``Es gibt keine grösste natürliche Zahl''\\
+	\textit{Beweis.} Wir nehmen an es gäbe eine grösste natürliche Zahl $m$.
+	Wir wissen, dass für jede Zahl $n$ gilt, dass $n+1$ ebenfalls eine natürliche
+	Zahl ist sowie dass $n<n+1$ erfüllt ist. Wir wenden dies auf die natürliche
+	Zahl $m$ an und erhalten $m+1$. Dies steht im Widerspruch zur ursprünglichen
+	Aussage, dass $m$ die grösste natürliche Zahl ist.
+
+	\subsubsection{Beweis durch Kontraposition}
+	Wenn eine Aussage von der Form $A \implies B$ zu beweisen ist, beweisen wir
+	$\neg B \implies \neg A$. \\
+	\textbf{Beispiel:} ``Für jede natürliche Zahl $n$ gilt: 
+	$(n^2+1=1) \implies (n=0)$ '' \\
+	\textit{Beweis.} Wenn $n\neq 0$ gilt, so folgt, dass auch $n^2 \neq 0$ gilt.
+	Dies impliziert, dass für jede weitere natürliche Zahl $m$ die 
+	Ungleichung $n^2 + m \neq m$ erfüllt ist. Insbesondere gilt daher, dass (der
+	Fall $m=1$)$n^2+1\neq 1$ gilt.
+
+	\subsubsection{Beweis einer Äquivalenz}
+	Um eine Aussage der Form $A \iff B$ zu beweisen, beweisen wir $A \implies B$
+	und $B \implies A$.\\
+	\textbf{Beispiel:} ``Für jede natürliche Zahl $n$ gilt:($n$ ist gerade)
+	$\implies$ ($n^2$ ist gerade).'' \\
+	\textit{Beweis.} Wir beweisen zuerst ($n$ ist gerade) $\implies$ 
+	($n^2$ ist gerade. Wir nehmen also an, dass $n$ eine gerade natürliche Zahl
+	ist. Daraus folgt, dass eine weitere natürliche Zahl $k$ mit $n=2\cdot k$ gibt.
+	Es folgt, dass
+	\begin{align*}
+		n^2 = n\cdot n = 2 \cdot k \cdot 2 \cdot k = 2 \cdot 
+		(k \cdot 2 \cdot k)
+	\end{align*}
+	offenbar gerade ist. \\
+	Nun wollen wir noch beweisen, dass ``$n^2$ ist gerade 
+	$\implies n$ ist gerade'' gilt. Bei Annahme, dass $n$ ungerade sei folgt, dass
+	es eine natürliche Zahl $k$ gibt mit $2 \cdot k - 1 = n$. Also ist $n^2 =
+	(2 \cdot k - 1)(2 \cdot k - 1) = 4k^2-4k+1=4(k^2-k)+1$ ungerade.
+
