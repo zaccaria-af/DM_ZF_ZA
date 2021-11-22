@@ -1,0 +1,172 @@
+\section{Mengen, Relationen und Funktionen}%
+\label{sec:mengen_relationen_und_funktionen}
+\subsection{Mengen}%
+\label{sub:mengen}
+
+\subsubsection{Schreibweise und Mengenbegriff}%
+\label{ssub:schreibweise}
+\begin{minipage}{0.9\linewidth}
+Zwei Mengen sind genau dann gleich, wenn sie dieselben Elemente enthalten:
+$X = Y\, \Leftrightarrow \forall z\, (z \in X \Leftrightarrow z \in Y)$. \\
+Sind mathematische Objekte $x_1,\dots,x_n$ gegeben, dann schreiben wir
+\[
+\{x_1,\dots,x_n\}
+\]
+für die Menge die als Elemente genau $x_1,\dots,x_n$ hat.
+$\{\,\}$: \textit{leere Menge} ($\varnothing$), einzige Menge, die keine Elemente besitzt. 
+\end{minipage}
+
+\subsubsection{Teilmengen}%
+\label{ssub:teilm}
+\begin{minipage}{0.9\linewidth}
+$X\subseteq Y$ ($X$ ist eine \textit{Teilmenge} von $Y$), wenn jedes Element von $X$ auch ein Element von $Y$ ist:
+\[
+X\subseteq Y:\,\Leftrightarrow\,\forall x\,(x\in X\Rightarrow x\in Y).
+\]
+$X\subsetneq Y$ ($X$ ist eine \textit{echte Teilmenge} von $Y$), falls $X$ eine von $Y$ verschiedene Teilmenge von $Y$ ist:
+\[
+X\subsetneq Y\,:\Leftrightarrow\, X\subseteq Y\land X\neq Y.
+\]
+\end{minipage}
+
+\subsubsection{Prädikative Schreibweise}%
+\label{ssub:mengeneigenschaft}
+\begin{minipage}{0.9\linewidth}
+Menge aller Elemente $z$ von $X$ mit der Eigenschaft $\mathsf{E}(z)$.	
+\[
+\big\{z\in X\mid \mathsf{E}(z)\big\}
+\]
+oder
+\[
+\big\{z\mid z\in X\land\mathsf{E}(z)\big\}
+\]
+\end{minipage}
+
+\subsubsection{Ersetzungsschreibweise}%
+\label{ssub:ersetzungsschreibweise}
+\begin{minipage}{0.9\linewidth}
+\[
+\big\{F(x)\mid x\in X \big\}
+\]
+Menge aller Funktionswerte $F(x)$.
+\[
+\big\{F(x)\mid x\in X\big\}:=\{y\mid \exists x\in X\,(y=F(x))\}.
+\]
+\end{minipage}
+
+\subsubsection{Schnittmenge und Vereinigung}%
+\label{ssub:schnittmenge_und_vereinigung}
+\begin{minipage}{0.9\linewidth}
+\[
+X\cup Y:=\{x\mid x\in X\lor x\in Y \}
+\]
+\textit{Vereinigung} von $X$ mit $Y$. \textit{Schnittmenge} von $X$ und $Y$:
+\[
+X\cap Y:=\{x\in X\mid x\in Y \}=\{x\mid x\in X\land x\in Y\}
+\]
+Ist $I$ eine Menge so, dass für alle Elemente $i\in I$ auch $A_i$ eine Menge ist, dann wird
+\[
+\bigcup_{i\in I}A_i:=\{x\mid\exists i\in I\,(x\in A_i) \}.
+\]
+die Vereinigung von $\{A_i\mid i\in I\}$ genannt.
+Analog dazu, ist die \textit{Schnittmenge} durch
+\[
+\bigcap_{i\in I}A_i:=\{x\mid\forall i\in I\,(x\in A_i) \}
+\]
+gegeben, falls $I\neq\varnothing$ ist.
+\end{minipage}
+
+\subsubsection{Disjunkte Mengen}%
+\label{ssub:disjunkte_mengen}
+\begin{minipage}{0.9\linewidth}
+\textit{disjunkt}: zwei Mengen, die keine gemeinsamen Elemente haben, d.h. \\
+$X\cap Y=\varnothing$
+\textit{paarweise disjunkt}:
+ \[
+ \forall i,j\in I\,(i\neq j\Rightarrow A_i\cap A_j=\varnothing).
+ \]
+\end{minipage}
+
+\subsubsection{Komplementärmenge}%
+\label{ssub:komplementärmenge}
+\begin{minipage}{0.9\linewidth}
+ \[
+ X\setminus Y:=\{x\in X\mid x\notin Y\}
+ \]
+Menge aller Elemente von $X$, die nicht zu $Y$ gehören.
+\end{minipage}
+
+\subsubsection{Rechenregeln für Mengen}%
+\label{ssub:rechenregeln_für_mengen}
+\begin{minipage}{0.9\linewidth}
+\begin{enumerate}
+ \item Kommutativität der Vereinigung und des Schnittes:
+\[
+ A\cup B=B\cup A\
+ A\cap B=B\cap A.
+\]
+ \item Assoziativgesetze von Schnitt und Vereinigung:
+\[
+ A\cap(B\cap C)=(A\cap B)\cap C
+ A\cup(B\cup C)=(A\cup B)\cup C
+\]
+ \item Distributivgesetze von $\cap$ mit $\cup$:
+\[
+ A\cap(B\cup C)=(A\cap B)\cup (A\cap C)
+ A\cup(B\cap C)=(A\cup B)\cap (A\cup C)
+\]
+ \item Idempotenzgesetz:
+\[
+  A\cap A=A\
+  A\cup A=A
+\]
+ \item Regeln von DeMorgan:
+\[
+ (C\backslash A)\cap (C\backslash B)=C\backslash (A\cup B)\\
+ (C\backslash A)\cup (C\backslash B)=C\backslash (A\cap B)
+\]
+ \item Charakterisierung der Teilmengenbeziehung:
+\[
+ A\subseteq B\Leftrightarrow A\cap B= A\Leftrightarrow A\cup B=B
+\]
+\end{enumerate}
+\end{minipage}
+
+\subsubsection{Potenzmenge}%
+\label{ssub:potenzmenge}
+\begin{minipage}{0.9\linewidth}
+\[
+ \mathcal{P}(A):=\{x\mid x\subseteq A\}
+\]
+\textit{Potenzmenge} von $A$, die genau die Teilmengen von $A$ als Elemente enthält.
+\end{minipage}
+
+\subsubsection{Partition}%
+\label{ssub:partition}
+\begin{minipage}{0.9\linewidth}
+\textit{Partition} $P=\{P_i\mid i\in I \}$ = Menge von Teilmengen von $A$, die folgende beiden Voraussetzungen erfüllt:
+\begin{itemize}
+ \item Die Elemente von $P$ sind nichtleer und paarweise disjunkt.
+ \item $\bigcup_{i\in I}P_i=A$
+\end{itemize}
+Elemente einer Partition = \textit{Blöcke}.
+\end{minipage}
+
+\subsection{Relationen, Funktionen und Graphen}%
+\label{sub:Relatiinen, Funktionen und Graphen}
+
+\subsubsection{Tupel}%
+\label{ssub:tupel}
+Ein \textit{n-Tupel} ist ein Term der Form $(x_1,...,x_n)$ wobei $n$ eine natürliche Zahl grösser $0$ ist. \\
+Für beliebige Tupel gilt:
+\begin{equation}
+	(x_1,\dots,x_n)=(y_1,\dots,y_k):\Leftrightarrow n=k\land x_1=y_1\land\dots\land y_n=x_n.
+\end{equation}
+2-Tupel nennen wir \textit{Paare} und 3-Tupel \textit{Tripel}.
+
+\subsubsection{Kartesisches Produkt}%
+\label{ssub:kartesisches_produkt}
+
+Die Gesamtheit aller Tupel mit Elementen aus einer oder mehreren gegebenen Mengen nennt man kartesisches Produkt.
+
+
