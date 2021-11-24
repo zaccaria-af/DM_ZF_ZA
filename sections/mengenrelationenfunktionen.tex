@@ -451,9 +451,9 @@ Jede Vereinigung von abzählbar vielen abzählbaren Mengen ist abzählbar. Konkr
 \[
 \bigcup_{i\in\mathbb{N}}A_i
 \]
-ist abzählbar, wenn alle $A_i$'s abzählbar sind.
+ist abzählbar, wenn alle $A_i$'s abzählbar sind. \\
 \textbf{\textit{Beweis: }}
-Wir nehmen an, dass die Menge $\{A_i\mid i\in \mathbb{N} \}$ aus lauter abzählbaren Mengen besteht. Um zu zeigen, dass $\bigcup_{i\in N}A_i$ abzählbar ist, genügt es, aufgrund von Satz~\ref{satz:abzaehlbarTransitiv} und Satz~\ref{cantor1}, zu zeigen, dass es eine surjektive Funktion
+Wir nehmen an, dass die Menge $\{A_i\mid i\in \mathbb{N} \}$ aus lauter abzählbaren Mengen besteht. Um zu zeigen, dass $\bigcup_{i\in N}A_i$ abzählbar ist, genügt es zu zeigen, dass es eine surjektive Funktion
 \[
 H:\mathbb{N}\times\mathbb{N}\to\bigcup_{i\in N}A_i
 \]
@@ -468,20 +468,20 @@ H:\mathbb{N}\times\mathbb{N}\to \bigcup_{i\in N}A_i\phantom{abstand}\text{mit}\p
 \]
 die gesuchte surjektive Funktion ist. \\
 \textbf{Folgerung }
-Die Menge $\mathbb{Z}\times \mathbb{Z}$ ist abzählbar.
+Die Menge $\mathbb{Z}\times \mathbb{Z}$ ist abzählbar. \\
 \textbf{\textit{Beweis: }}
 \begin{align*}
 X&=\mathbb{N}\times\{-n\mid n\in \mathbb{N}\}\\
 Y&=\{-n\mid n\in \mathbb{N}\}\times\mathbb{N} \\
 Z&=\{-n\mid n\in \mathbb{N}\}\times\{-n\mid n\in \mathbb{N}\}
 \end{align*}
-abzählbar sind. Aus Satz~\ref{satz:countableUnion} folgt also, dass die Menge
+abzählbar sind. Es folgt also, dass die Menge
 \[
 \mathbb{Z}\times\mathbb{Z}=(\mathbb{N}\times\mathbb{N})\cup X\cup Y\cup Z
 \]
 abzählbar ist. \\
 \textbf{Folgerung }
-Die Menge $\mathbb{Q}=\big\{\frac{x}{y}\mid x,y\in \mathbb{Z}\big\}$ der rationalen Zahlen (Brüche) ist abzählbar.
+Die Menge $\mathbb{Q}=\big\{\frac{x}{y}\mid x,y\in \mathbb{Z}\big\}$ der rationalen Zahlen (Brüche) ist abzählbar. \\
 \textbf{\textit{Beweis: }}
 Da die Funktion
 \[
@@ -491,9 +491,9 @@ surjektiv ist, folgt die Behauptung aus Satz~\ref{satz:abzaehlbarTransitiv}.\\
 
 \subsubsection{Theorem 2}%
 \label{ssub:theorem_2}
-Die Menge aller unendlichen Binärsequenzen (Sequenzen aus Nullen und Einsen) ist überabzählbar.
+Die Menge aller unendlichen Binärsequenzen (Sequenzen aus Nullen und Einsen) ist überabzählbar. \\
 \textbf{\textit{Beweis: }}
-Beweis durch Widerspruch. Wäre die Menge aller unendlichen Binärsequenzen abzählbar, dann gäbe es eine Liste von der Form\footnote{Natürlich ist die angedeutete Liste Beispielhaft und dient nur der Veranschaulichung unserer Konstruktion der Sequenz $b$. Die Sequenz $s_0$, beispielsweise, könnte auch mit dem Präfix $00000100$ oder irgend einer anderen Folge von Nullen und Einsen beginnen. }
+Beweis durch Widerspruch. Wäre die Menge aller unendlichen Binärsequenzen abzählbar, dann gäbe es eine Liste von der Form
 \begin{center}
 \begin{tabular}{c|l}
 $\mathbb{N}$ & Binärsequenzen\\
@@ -522,7 +522,7 @@ Das Intervall $(0,1)=\{r\in\mathbb{R}\mid 0<r<1 \}$ ist überabzählbar. Insbeso
 \textbf{\textit{Beweis: }}
 Die reellen Zahlen (in Binärdarstellung) im Intervall $(0,1)$, sind von der Form $0,\dots$ wobei $\dots$ für eine
 unendliche Binärsequenz steht. Daher steht das Intervall $(0,1)$ mit der Menge aller unendlichen Binärsequenzen in
-eins-zu-eins Korrespondenz. Die Behauptung folgt daher aus Theorem~\ref{thrm:cantor2}.\\
+eins-zu-eins Korrespondenz. Die Behauptung folgt daher aus Theorem 2.\\
 \textbf{Folgerung }
 Die Potenzmenge von $\mathbb{N}$ ist überabzählbar. \\
 \textbf{\textit{Beweis: }}
@@ -533,7 +533,7 @@ Jede Teilmenge $A$ von $\mathbb{N}$ kann wie folgt durch eine Binärsequenz $\ch
 0&\text{falls} n\notin A.
 \end{cases}
 \end{align*}
-Daher folgt die Behauptung aus Theorem~\ref{thrm:cantor2}.\\
+Daher folgt die Behauptung aus Theorem 2.\\
 \textbf{Folgerung }
 Die Menge aller Funktionen $F:\mathbb{N}\to\mathbb{N}$ ist überabzählbar. \\
 \textbf{\textit{Beweis: }}
@@ -588,7 +588,7 @@ Es sei $R$ eine Äquivalenzrelation auf einer Menge $X$ und $x\in X$. Die \texti
 
 \subsubsection{Lemma 3}%
 \label{ssub:lemma_3}
-Ist $\sim $ eine Äquivalenzrelation auf einer Menge $X$ und gilt $x,y\in X$ mit $x\sim y$, dann gilt $[x]_\sim=[y]_\sim$. Mit anderen Worten, äquivalente Elemente repräsentieren stets dieselbe Äquivalenzklasse.
+Ist $\sim $ eine Äquivalenzrelation auf einer Menge $X$ und gilt $x,y\in X$ mit $x\sim y$, dann gilt $[x]_\sim=[y]_\sim$. Mit anderen Worten, äquivalente Elemente repräsentieren stets dieselbe Äquivalenzklasse. \\
 \textbf{\textit{Beweis: }} 
 Seien $X,\sim,x,y$ wie in der Behauptung. Um zu zeigen, dass $[x]_\sim=[y]_\sim$ gilt, genügt es nachzuweisen, dass $x\sim z\Leftrightarrow y\sim z$ für beliebige $z\in X$ gilt. Wir nehmen $x\sim y$ an, dann gilt
     \begin{align*}
@@ -600,9 +600,9 @@ Seien $X,\sim,x,y$ wie in der Behauptung. Um zu zeigen, dass $[x]_\sim=[y]_\sim$
     \]
     wie gewünscht. \\
 \textbf{Folgerung: } 
-Ist $\sim $ eine Äquivalenzrelation auf $X$ und sind $x,y\in X$ mit $x\in[y]_\sim$, dann gilt $[x]_\sim=[y]_\sim$. Mit anderen Worten, jedes Element einer Äquivalenzklasse ist auch ein Repräsentant dieser Äquivalenzklasse.
+Ist $\sim $ eine Äquivalenzrelation auf $X$ und sind $x,y\in X$ mit $x\in[y]_\sim$, dann gilt $[x]_\sim=[y]_\sim$. Mit anderen Worten, jedes Element einer Äquivalenzklasse ist auch ein Repräsentant dieser Äquivalenzklasse. \\
 \textbf{\textit{Beweis: }}
-Es seien $X,\sim,x$ und $y$ wie in der Behauptung. Aus $x\in[y]_\sim$ folgt $y\sim x$. Die Behauptung folgt nun aus Lemma~\ref{lm:sim gleiche klasse}.
+Es seien $X,\sim,x$ und $y$ wie in der Behauptung. Aus $x\in[y]_\sim$ folgt $y\sim x$. Die Behauptung folgt nun aus Lemma 3.
 
 \subsubsection{Sätze zu Äquivalenzrelationen}%
 \label{ssub:sätze_zu_äquivalenzrelationen}
@@ -629,7 +629,7 @@ Es sei $\sim$ eine beliebige Äquivalenzrelation auf einer Menge $X$. Wir müsse
     \bigcup_{x\in X}[x]_{\sim}=X.
     \]
     \end{enumerate}
-    Der erste Punkt folgt aus der Definition von der Faktormenge (die Äquivalenzklassen sind via ihrer Repräsentanten definiert). Die Tatsache, dass die Äquivalenzklassen paarweise disjunkt sind, ist genau die Aussage von Satz~\ref{satz: equivalenzklassen disjunkt}. Wir brauchen also bloss noch den letzten Punkt zu verifizieren. Dies folgt, da für jedes $z\in X$, wegen der Transitivität von $\sim$, $z\sim z$ und somit
+    Der erste Punkt folgt aus der Definition von der Faktormenge (die Äquivalenzklassen sind via ihrer Repräsentanten definiert). Die Tatsache, dass die Äquivalenzklassen paarweise disjunkt sind, ist gegeben. Wir brauchen also bloss noch den letzten Punkt zu verifizieren. Dies folgt, da für jedes $z\in X$, wegen der Transitivität von $\sim$, $z\sim z$ und somit
     \[
     z\in[z]_\sim\subseteq\bigcup_{x\in X}[x]_\sim
     \]
