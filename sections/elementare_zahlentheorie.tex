@@ -1,0 +1,191 @@
+\section{Elementare Zahlentheorie}
+\subsection{Rechenregeln auf $\mathbb{Z}$}
+
+\begin{align*}
+	-1\cdot z & =-z                                                                 \\
+	-(-z)     & =z                                                                  \\
+	-z+z      & =0                      & \text{ Inverse Elemente bezüglich }+      \\
+	0\cdot z  & =0                      & \text{ Absorbtion}                        \\
+	1\cdot z  & =z                      & \text{ Neutrales Element bezüglich }\cdot \\
+	0+z       & =z                      & \text{ Neutrales Element bezüglich }+     \\
+	r(sz)     & =(rs)z                  & \text{ Assoziativität von } \cdot         \\
+	r+(s+z)   & =(r+s)+z                & \text{ Assoziativität von }+              \\
+	rs        & =sr                     & \text{ Kommutativität von }\cdot          \\
+	r+s       & =s+r                    & \text{ Kommutativität von }+              \\
+	r(s+z)    & =rs+sz                  & \text{ Distributivität}                   \\
+	rx=ry     & \Rightarrow x=y\lor r=0 & \text{Kürzbarkeit}
+\end{align*}
+
+\subsubsection{Subtraktion}
+Wir definieren die \textit{Subtraktion}
+\[
+	-:\mathbb{Z}\times\mathbb{Z}\rightarrow\mathbb{Z}
+\]
+durch
+\[
+	x-y:=x+(-y),
+\]
+die \textit{Betragsfunktion}
+\[
+	|\cdot|:\mathbb{Z}\rightarrow\mathbb{N}
+\]
+durch
+\[
+	|z|=\begin{cases}
+		z         & \text{falls } z\in\mathbb{N} \\
+		-1\cdot z & \text{sonst}
+	\end{cases}
+\]
+und die Relation $\leq$ durch
+\[
+	x\leq y:\Leftrightarrow\,\exists n\in\mathbb{N}\,(x+n=y).
+\]
+
+\subsection{Teilbarkeit und euklidischer Algorithmus}
+Sind $x,y\in\mathbb{Z}$ ganze Zahlen, so sagen wir, dass $x$ \textit{ein Teiler von} $y$ ist, falls es ein $k\in\mathbb{Z}$ gibt mit $xk=y$. Wir schreiben in diesem Fall $x|y$. Es gilt also
+\[
+	x|y:\Leftrightarrow \exists k\in\mathbb{Z}(y=xk).
+\]
+Mit $T(y)$ bezeichnen wir die Menge aller natürlichen Zahlen, welche Teiler von $y$ sind, also $T(y)=\{x\in\mathbb{N}\mid x|y\}$.
+
+Die Teilbarkeitsrelation ist reflexiv und transitiv auf der Menge $\mathbb{Z}$
+
+\subsubsection{Teilen mit Rest}
+Sind $n,m\in\mathbb{N}\backslash\{0\}$, dann gibt es eindeutig bestimmte Zahlen $k,r\in\mathbb{N}$, so dass Folgendes gilt:
+\begin{enumerate}
+	\item $m=kn+r$
+	\item $r<n$
+\end{enumerate}
+Wir sagen in diesem Zusammenhang, dass die Zahl $r$ den \textit{Rest} von der (ganzzahligen) Division von $m$ durch $n$ ist.
+
+\subsubsection{kgV und ggT}
+Seien $n,m\in\mathbb{Z}$. Wir definieren das \textit{kleinste gemeinsame Vielfache von $n$ und $m$} als
+\[
+	kgV(n,m):=\min\{k\in\mathbb{N}\mid n|k\wedge m|k\}.
+\]
+Ist $n\neq0$ oder $ m\neq 0$, dann definieren wir den \textit{grössten gemeinsamen Teiler} von $n$ und $m$ als
+\[
+	ggT(n,m):=\max\{k\in\mathbb{N}\mid k|n\wedge k|m\}.
+\]
+
+Sind $x,y,z\in\mathbb{Z}$, dann sind folgende Aussagen äquivalent:
+\begin{enumerate}
+	\item[1.] $ x|y\wedge x|z$
+	\item[2.] $x|y\wedge x|(y-z) $
+\end{enumerate}
+
+$1.\Rightarrow 2.$: Wenn $x|y\wedge x|z$, dann gibt es ganze Zahlen $k,k'\in\mathbb{Z}$, so dass $y=kx$ und $z=k'x$. Es gilt also $y-z=kx-k'x=(k-k')x$.
+
+$2.\Rightarrow 1.$: Es seien $k,k'\in\mathbb{Z}$, so dass $y=kx$ und $y-z=k'x$. Durch Einsetzen erhält man $ kx-z=k'x $ und somit $z=kx-k'x=x(k-k')$.
+
+\subsubsection{Euklidischer Algorithmus}
+Für $n,m\in\mathbb{N}$ mit $0<n< m$ gilt
+\[
+	ggT(n,m)=ggT(n,m-n)=ggT(m,m-n).
+\]
+Es folgt für $n,m\in\mathbb{N}$ mit $n<m$
+\[
+	\{k\in\mathbb{N}\mid k|n\wedge k|m\}=\{k\in\mathbb{N}\mid k|n\wedge k|(m-n)\}.
+\]
+Daraus folgt weiter
+\[
+	ggT(n,m)=\max\{k\in\mathbb{N}\mid k|n\wedge k|m\}=
+\]
+\[
+	\max\{k\in\mathbb{N}\mid k|n\wedge k|(m-n)\}=ggT(n,m-n).
+\]
+Die Gleichung
+\[
+	ggT(n,m)=ggT(m,m-n)
+\]
+folgt analog aus Lemma 4.
+\\
+Aus dem eben bewiesenen Satz erhalten wir direkt einen rekursiven Algorithmus zur Berechnung des $ggT$. Beispielhaft geht man dabei wie folgt vor:
+\begin{align*}
+	ggT(45,25) & \stackrel{Satz~\ref{satz:euklid}}{=}ggT(25,20)  \\
+	           & \stackrel{Satz~\ref{satz:euklid}}{=}ggT(20,5)   \\
+	           & \stackrel{Satz~\ref{satz:euklid}}{=}ggT(5,15)   \\
+	           & \stackrel{Satz~\ref{satz:euklid}}{=}ggT(5,10)   \\
+	           & \stackrel{Satz~\ref{satz:euklid}}{=}ggT(5,5)=5.
+\end{align*}
+
+
+Betrachten wir nochmals den Satz~\ref{satz:euklid}, dann sehen wir, dass wir mehrere Schritte zu einem einzigen Schritt zusammenfassen können. Bei $x>y$ wird nämlich, zum Berechnen von $ggT(y,x)$ so oft $y$ von $x$ subtrahiert, bis das Resultat kleiner oder gleich $y$ ist. Man kann all diese Subtraktionen also durch eine einzige Division mit Rest ersetzen.
+Die beispielhafte Berechnung von $ggT(45,25)$ können wir nun als $2$ Divisionen mit Rest darstellen:
+\begin{align*}
+	45 & = 1 \cdot 25 + 20                           \\
+	25 & = 1 \cdot 20 + \underbrace{5}_{ggT(45,25)}.
+\end{align*}
+Zusammenfassend stellen wir fest, dass
+\[
+	ggT(y,x)=ggT(y,R(x,y))
+\]
+mit
+\[
+	R(x,y)=\text{ der Rest der Division von }x\text{ durch }y
+\]
+gilt. Die Funktion $R(x,y)$ steht in vielen Programmiersprachen als ``modulo Funktion'' zur Verfügung und wird im Quellcode oft durch das Prozentzeichen $\%$ aufgerufen. Dies eröffnet die Möglichkeit den euklidischen Algorithmus kompakter zu notieren:\\
+
+\subsubsection{Lemma von Bézout}
+
+Sind $x,y\in\mathbb{Z}$ mit $x,y\neq 0$, dann gibt es ganze Zahlen $a,b$ so dass
+\[
+	ggT(x,y)=ax+by
+\]
+gilt.
+
+Wir beweisen das Theorem exemplarisch für den Fall, dass $ggT(m,n)=1$ gilt. Ohne Einschränkung sei $m>n$. Sind $x,y$ beliebige ganze Zahlen, dann bezeichnen wir
+\begin{align*}
+	R(x,y):=\begin{cases}
+		\text{ Der Rest von der ganzzahligen Division von $x$ durch $y$} & \text{falls }x,y>0 \\
+		0                                                                & \text{sonst.}
+	\end{cases}
+\end{align*}
+Wir definieren rekursiv eine absteigende Folge $(r_i)_{i\in\mathbb{N}}$ von natürlichen Zahlen wie folgt:
+\begin{align*}
+	r_i=\begin{cases}
+		m                  & \text{falls }i=0 \\
+		n                  & \text{falls }i=1 \\
+		R(r_{i-2},r_{i-1}) & \text{sonst.}
+	\end{cases}
+\end{align*}
+Da es keine echt absteigende Folge von natürlichen Zahlen gibt, muss die Folge der $(r_i)_{i\in\mathbb{N}}$ stationär werden. Es folgt also aus der Definition der Folge $(r_i)_{i\in\mathbb{N}}$, dass es ein $p\in\mathbb{N}$ gibt, so dass $r_{p}\neq0$ und für alle $p`>p$ gilt $r_{p`}=0$. Es sei $(\lambda_i)_{i\in\mathbb{N}}$ die durch $(r_i)_{i\in\mathbb{N}}$ eindeutig bestimmte Folge natürlicher Zahlen mit der Eigenschaft (*):
+\begin{align*}
+	r_0     & =\lambda_0\cdot r_1+r_2           \\
+	r_1     & =\lambda_1\cdot r_2+r_3           \\
+	        & \vdots                            \\
+	r_{p-2} & =\lambda_{p-2}\cdot r_{p-1}+r_{p}
+\end{align*}
+\textbf{Behauptung}: $r_p=1$\\
+\textbf{Beweis}: Wir zeigen, dass $r_p$ ein Teiler von allen $r_i$ mit $i\leq p$ ist. Weil $r_0=m,r_1=n$ teilerfremd sind, gilt dann $r_p=1$. Wir beweisen mit (der allgemeinen Version von) Induktion für alle $k\in\mathbb{N}$, dass entweder $r_p|r_{p-k}$ oder $k>p$ gilt.
+Falls $k>p$ ist, dann sind wir fertig. Wir können also ohne Einschränkung der Allgemeinheit annehmen, dass $k\leq p$ gilt. Nach Induktionsannahme ist nun $r_p$ ein Teiler von $r_{p-(k-1)}$ und von $r_{p-(k-2)}$, es gibt also ganze Zahlen $x,y$ mit $x\cdot r_p=r_{p-(k-1)}$ und $y\cdot r_p=r_{p-(k-2)}$. Insgesamt haben wir dann
+\begin{align*}
+	r_{p-k}=\lambda_{p-k}\cdot r_{p-k+1}+r_{p-k+2}=\lambda xr_{p}+yr_{p}=r_{p}(\lambda x+y)
+\end{align*}
+und somit wie gewünscht, dass $r_p$ ein Teiler von $r_{p-k}$ ist.\\
+Wir können nun das Gleichungssystem $(*)$ als
+\begin{align*}
+	r_0     & =\lambda_0\cdot r_1+r_2       \\
+	r_1     & =\lambda_1\cdot r_2+r_3       \\
+	        & \vdots                        \\
+	r_{p-2} & =\lambda_{p-2}\cdot r_{p-1}+1
+\end{align*}
+schreiben. Dies ist jedoch mit
+\begin{align*}
+	1                            & =r_{p-2}-\lambda_{p-2}r_{p-1}                                   \\
+	r_{p-1}                      & =r_{p-3}-\lambda_{p-3}r_{p-2}                                   \\
+	                             & \vdots                                                          \\
+	r_{p-i}                      & =r_{p-i-2}-\lambda_{p-i-2}r_{p-i-1}                             \\
+	                             & \vdots                                                          \\
+	\underbrace{r_{p-p+2}}_{r_2} & =\underbrace{r_{p-p}}_{m}-\lambda_{0}\underbrace{r_{p-p+1}}_{n}
+\end{align*}
+äquivalent. Indem wir nun sukzessiv (von unten beginnend) in jeder Zeile des Gleichungssystems die $r_i$ auf der rechten Seite durch eine Summe von Vielfachen von $n$ und $m$ ersetzen, erhalten wir zuoberst im Gleichungssystem für geeignete $s,\delta_i,\gamma_i$ eine Gleichung von der gewünschten Gestalt
+\[
+	1=\sum_{i=1}^{s}\delta_in-\gamma_im=\sum_{i=1}^{s}\delta_in-\sum_{i=1}^{s}\gamma_im=n\sum_{i=1}^{s}\delta_i-m\sum_{i=1}^{s}\gamma_i.\qedhere
+\]
+
+\subsection{Primzahlen}
+
+Eine natürliche Zahl $p \in \mathbb{N}$ ist eine \textit{Primzahl}, wenn $|T(p)|=2$ gilt. Die Menge aller Primzahlen bezeichnen wir mit $\mathbb{P}$. \\
+Ist $p$ eine Primzahl, dann gilt $T(p)=$ \\
+
